@@ -1,4 +1,5 @@
 # プログラミング用フォント Ricty
+
 Ricty (リクティ) は Linux 環境での研究・開発に適した
 フリーのプログラミング用 TrueType フォントです。
 C、C++、FORTRAN、Python、Perl、Ruby、AWK、シェルスクリプト、
@@ -10,6 +11,7 @@ Makefile、LaTeX など、UNIX 系のコーディングにおける使用を想�
 * [Migu 1M](http://mix-mplus-ipa.sourceforge.jp/)
 
 # ライセンス
+
 * Ricty が SIL Open Font License Version 1.1 section 5 に
   違反する解釈ができるとの指摘を受け、万全を期すために
   Version 3.0.0 より TrueType フォントの配布を中止し、
@@ -24,57 +26,70 @@ Makefile、LaTeX など、UNIX 系のコーディングにおける使用を想�
   特に、OFL 1.1 section 5 に従い、生成されたフォントの再配布は禁止とします。
 
 # バージョン
+
 ## Version 3.1.3 (24 Nov. 2011)
+
 * Ricty Discord のコマンドラインオプション
 * コマンドラインオプションの追加
 
 ## Version 3.1.2 (3 Oct. 2011)
+
 * Migu 20111002 に同期 (後方互換を担保せず)
 * コマンドラインオプションの追加
 
 ## Version 3.1.1 (8 July 2011)
+
 * コマンドラインオプションの追加
 
 ## Version 3.1.0 (19 June 2011)
+
 * Mac OS X で Regular と Bold が異なる高さで表示される問題に対処
 
 ## Version 3.0.2 (2 June 2011)
+
 * 生成スクリプトへの auto オプションの追加
 
 ## Version 3.0.1 (20 May 2011)
 
 ## Version 3.0.0 (17 May 2011)
+
 * 生成スクリプトの配布開始
 * TrueType フォントの配布中止
 
 # 生成方法
+
 ## FontForge のインストール
+
 ### Debian/Ubuntu
 
     # apt-get install fontforge
 
-### Fedora
+### Fedora/CentOS
 
     # yum install fontforge
 
+### OpenSUSE
+
+    # zypper install fontforge
+
 ### その他の Linux
+
 [FontForge 公式サイト](http://fontforge.sourceforge.net/ja/)より
 入手してください。
 
 ## Inconsolata のインストール
-### Debian/Ubuntu
 
-    # apt-get install ttf-inconsolata
-
-### その他の Linux
 [Inconsolata 公式サイト](http://levien.com/type/myfonts/inconsolata.html)より
 OpenType file を入手し、インストールしてください。
 
 ## Migu 1M のインストール
+
 「[M+ と IPA の合成フォント](http://mix-mplus-ipa.sourceforge.jp/)」より入手し、
 インストールしてください (MigMix ではありません)。
 
 ## Ricty の生成
+
+以上 2 種類のフォントをインストールした後で
 
     % sh ricty_generator.sh auto
 
@@ -90,36 +105,65 @@ OpenType file を入手し、インストールしてください。
     % fc-cache -vf
 
 ## (おまけ) `ricty_generator.sh` のコマンドラインオプション
+
 ### `-h`
+
 ヘルプを表示する。
+
 ### `-V`
+
 バージョン番号を表示する。
+
 ### `-f /path/to/fontforge`
+
 fontforge コマンドのパスを指定する。
+
 ### `-v`
+
 fontforge の警告メッセージを表示する。
+
 ### `-l`
+
 生成の過程で生じる中間ファイルを削除せずに残す。
+
 ### `-n string`
+
 フォントファミリ名を「Ricty」ではなく「Ricty ○○○」として生成する。
+
 ### `-w`
+
 行間を広くする。
+
 ### `-W`
+
 行間をかなり広くする。
+
 ### `-b`
+
 ASCII グリフのボールド体をより太くする。
+
 ### `-B`
+
 ASCII グリフのレギュラー/ボールド体をより太くする (レギュラーを、デフォルトのボールド体程度の太さにする)。
+
 ### `-Z unicode`
+
 他のグリフのコピーすることで全角スペースを可視化する (たとえば `-Z 2318` とすると、全角スペースが &#x2318; になる)。
+
 ### `-z`
+
 全角スペースを可視化しない。
+
 ### `-a`
+
 Inconsolata のグリフを優先し、Ambiguous 文字を全角化しない。
+
 ### `-s`
+
 Migu 1M のグリフを縮小しない (`-w` オプションとの併用を推奨)。
 
 # 派生フォント Ricty Discord
+
 Ricty では、調和・統一感の維持のため、プログラミング用フォントのコアである
 Inconsolata 由来の ASCII 文字に手を入れないようにしています。
 Discord (不協和音) 版は、統一感を乱す覚悟で ASCII 文字に手を入れた
@@ -131,42 +175,77 @@ Ricty の派生フォントです。
     % fontforge -script ricty_discord_patch.pe [options] Ricty-Regular.ttf Ricty-Bold.ttf
 
 ## `ricty_discord_patch.pe` のコマンドラインオプション
+
 ### `-quotedbl`
+
 「"」を拡大しない。
+
 ### `-quotesingle`, `-quote`
+
 「'」を拡大しない。
+
 ### `-comma`
+
 「,」を拡大しない。
+
 ### `-period`
+
 「.」を拡大しない。
+
 ### `-0`, `-zero`
+
 「0」をドットゼロにせず、スラッシュゼロのままにする。
+
 ### `-7`, `-seven`
+
 「7」にクロスバーを付けない。
+
 ### `-colon`
+
 「:」を拡大しない。
+
 ### `-semicolon`
+
 「;」を拡大しない。
+
 ### `-D`
+
 「D」を Eth にしない (「D」にクロスバーを付けない)。
+
 ### `-Z`
+
 「Z」にクロスバーを付けない。
+
 ### `-asciicircum`, `-circum`
+
 「^」を拡大しない。
+
 ### `-grave`
+
 「`」を拡大しない。
+
 ### `-l`
+
 「l」の左下のセリフを切り落とさない。
+
 ### `-r`
+
 「r」をセリフ体 (Inconsolata の不使用グリフ) にしない。
+
 ### `-z`
+
 「z」にクロスバーを付けない。
+
 ### `-bar`
+
 「|」を破断線 (Inconsolata のグリフ) にしない。
+
 ### `-asciitilde`, `-tilde`
+
 「~」を上方に移動しない。
 
 # 既知の問題
+
 * Mac OS X を含む一部の環境において、生成スクリプトを実行すると
   FontForge が segmentation fault で異常終了することがあります。
   * 「[Ricty のビルド中に fontforge が segmentation fault でクラッシュする問題](http://d.hatena.ne.jp/eagletmt/20110602/1306964018)」にて
@@ -199,6 +278,7 @@ Ricty の派生フォントです。
     91 % に縮小しています (その分文字間隔が広くなっています)。
 
 # メモ
+
 * `ricty_generator.sh` に Migu 1M 以外の日本語フォントを食べさせても
   大抵はうまく合成されます。
   ボールド体がない日本語フォントでも、
@@ -213,4 +293,5 @@ Ricty の派生フォントです。
   現時点ではギリシア文字拡張グリフには対応していません。
 
 # 作者連絡先
+
 [遊佐泰紀 (Yasunori Yusa)](http://save.sys.t.u-tokyo.ac.jp/~yusa/index_ja.html)
