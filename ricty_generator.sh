@@ -51,7 +51,7 @@ fontforge_cmd="fontforge"
 redirection_stderr="/dev/null"
 
 # set fonts directories used in auto flag
-fonts_dirs=". ${HOME}/.fonts /usr/local/share/fonts /usr/share/fonts ${HOME}/Library/Fonts /Library/Fonts"
+fonts_dirs=". ${HOME}/.fonts /usr/local/share/fonts /usr/share/fonts ${HOME}/Library/Fonts /Library/Fonts /cygdrive/c/Windows/Fonts"
 
 # set zenkaku space glyph
 zenkaku_space_glyph=""
