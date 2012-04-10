@@ -21,6 +21,7 @@ if ($argc == 1)
     Print("  -quotedbl              Disable magnified \"")
     Print("  -quotesingle, -quote   Disable magnified \'")
     Print("  -comma                 Disable magnified ,")
+    Print("  -hyphen                Disable - moved downward")
     Print("  -period                Disable magnified .")
     Print("  -0, -zero              Disable dotted 0")
     Print("  -7, -seven             Disable 7 with cross-bar")
@@ -42,6 +43,7 @@ endif
 flag_quotedbl="true"
 flag_quotesingle="true"
 flag_comma="true"
+flag_hyphen="true"
 flag_period="true"
 flag_0="true"
 flag_7="true"
@@ -70,6 +72,9 @@ if (Strsub($argv[i], 0, 1) == "-")
     elseif ($argv[i] == "-comma" || $argv[i] == "--comma")
         Print("Option: Disable magnified ,")
         flag_comma="false"
+    elseif ($argv[i] == "-hyphen" || $argv[i] == "--hyphen")
+        Print("Option: Disable - moved downward")
+        flag_hyphen="false"
     elseif ($argv[i] == "-period" || $argv[i] == "--period")
         Print("Option: Disable magnified .")
         flag_period="false"
@@ -174,6 +179,11 @@ endif
 if (flag_comma == "true")
     Select(0u002c);  Scale(115, 115, 250, 0); SetWidth(500)
     RemoveOverlap(); RoundToInt()
+endif
+
+# - -> - moved downward
+if (flag_hyphen == "true")
+    Select(0u002d); Move(0, -80)
 endif
 
 # . -> magnified .
