@@ -193,7 +193,7 @@ then
     tmp=""
     for i in $fonts_dirs
     do
-        [ -d $i ] && tmp="$tmp $i"
+        [ -d "$i" ] && tmp="$tmp $i"
     done
     fonts_dirs=$tmp
     # search Inconsolata
@@ -218,15 +218,15 @@ then
     input_migu1m_regu=$2
     input_migu1m_bold=$3
     # check file existance
-    if [ ! -r $input_inconsolata ]
+    if [ ! -r "$input_inconsolata" ]
     then
         echo "Error: ${input_inconsolata} not found" >&2
         exit 1
-    elif [ ! -r $input_migu1m_regu ]
+    elif [ ! -r "$input_migu1m_regu" ]
     then
         echo "Error: ${input_migu1m_regu} not found" >&2
         exit 1
-    elif [ ! -r $input_migu1m_bold ]
+    elif [ ! -r "$input_migu1m_bold" ]
     then
         echo "Error: ${input_migu1m_bold} not found" >&2
         exit 1
@@ -253,11 +253,11 @@ fi
 # remove tmp by trapping
 if [ "$leaving_tmp_flag" = "false" ]
 then
-    trap "if [ -d $tmpdir ]; then echo 'Remove temporary files'; rm -rf $tmpdir; echo 'Abnormal terminated'; fi; exit 3" HUP INT QUIT
-    trap "if [ -d $tmpdir ]; then echo 'Remove temporary files'; rm -rf $tmpdir; echo 'Abnormal terminated'; fi" EXIT
+    trap "if [ -d \"$tmpdir\" ]; then echo 'Remove temporary files'; rm -rf $tmpdir; echo 'Abnormal terminated'; fi; exit 3" HUP INT QUIT
+    trap "if [ -d \"$tmpdir\" ]; then echo 'Remove temporary files'; rm -rf $tmpdir; echo 'Abnormal terminated'; fi" EXIT
 else
-    trap "if [ -d $tmpdir ]; then echo 'Abnormal terminated'; fi; exit 3" HUP INT QUIT
-    trap "if [ -d $tmpdir ]; then echo 'Abnormal terminated'; fi" EXIT
+    trap "if [ -d \"$tmpdir\" ]; then echo 'Abnormal terminated'; fi; exit 3" HUP INT QUIT
+    trap "if [ -d \"$tmpdir\" ]; then echo 'Abnormal terminated'; fi" EXIT
 fi
 
 ########################################
@@ -524,7 +524,7 @@ fi
 
 # generate Ricty Discord (if the script exists)
 path2discord_patch=`dirname $0`/ricty_discord_patch.pe
-if [ -r $path2discord_patch ]
+if [ -r "$path2discord_patch" ]
 then
     $fontforge_cmd -script $path2discord_patch \
         ${ricty_familyname}${ricty_addfamilyname}-Regular.ttf \
