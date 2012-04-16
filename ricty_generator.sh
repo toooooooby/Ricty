@@ -2,7 +2,7 @@
 
 #
 # Ricty Generator
-ricty_version="3.2.0b"
+ricty_version="3.2.0"
 #
 # Author: Yasunori Yusa <lastname at save dot sys.t.u-tokyo.ac.jp>
 #
@@ -12,6 +12,7 @@ ricty_version="3.2.0b"
 # This script supports following versions of inputting fonts.
 # * Inconsolata Version 001.010
 # * Migu 1M     Version 20111002
+#                       20120411
 #
 # How to use:
 # 1. Install FontForge
