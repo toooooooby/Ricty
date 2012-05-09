@@ -63,6 +63,21 @@ Makefile、LaTeX など、UNIX 系のコーディングにおける使用を想�
 
 # 生成方法
 
+## 自動セットアップを利用した生成方法
+
+### Ubuntu 12.04
+
+RICTY\_OPTIONSにビルドオプションを設定して setup.sh を実行して下さい
+生成されたフォントは自動的に ~/.fonts に **上書き** されます!!! 
+
+    # RICTY_OPTIONS=  ./setup.sh
+
+オプションで Ambiguous 文字を全角化しない場合の例
+
+    # RICTY_OPTIONS=-a  ./setup.sh
+
+### その他の環境は以下の記述を参考にして下さい
+
 ## FontForge のインストール
 
 ### Debian/Ubuntu
