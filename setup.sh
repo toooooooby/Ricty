@@ -11,7 +11,7 @@ DISTRO="$(lsb_release --id --short)"  # => "Ubuntu"
 DISTRO_VERSION="$(lsb_release --release --short)" # => "11.10" or "12.04"
 
 # fill the requirements for build
-if [[ "$DISTRO" == 'Ubuntu' && "$DISTRO_VERSION" == '12.10' ]] ; then
+if [[ "$DISTRO" == 'Ubuntu' && "$DISTRO_VERSION" == '12.04' ]] ; then
     sudo apt-get install -y fontforge ttf-inconsolata
 fi
 
