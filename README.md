@@ -319,4 +319,4 @@ Ricty の派生フォントです。
 
 # 作者連絡先
 
-[遊佐泰紀 (Yasunori Yusa)](http://save.sys.t.u-tokyo.ac.jp/~yusa/index_ja.html)
+[遊佐泰紀 (Yasunori Yusa)](http://save.sys.t.u-tokyo.ac.jp/~yusa/index.html.ja)

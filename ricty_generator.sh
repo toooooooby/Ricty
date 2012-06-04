@@ -2,7 +2,7 @@
 
 #
 # Ricty Generator
-ricty_version="3.2.0"
+ricty_version="3.2.1b"
 #
 # Author: Yasunori Yusa <lastname at save dot sys.t.u-tokyo.ac.jp>
 #
@@ -466,7 +466,8 @@ i = 0; while (i < SizeOf(fontstyle_list))
     # edit zenkaku space (from ballot box and heavy greek cross)
     if ("$zenkaku_space_glyph" == "")
         Select(0u2610); Copy(); Select(0u3000); Paste()
-        Select(0u271a); Copy(); Select(0u3000); PasteInto(); OverlapIntersect()
+        Select(0u271a); Copy(); Select(0u3000); PasteInto()
+        OverlapIntersect()
     else
         Select(${zenkaku_space_glyph}); Copy(); Select(0u3000); Paste()
     endif
@@ -481,16 +482,16 @@ i = 0; while (i < SizeOf(fontstyle_list))
     CenterInWidth()
     # edit en dash
     Select(0u2013); Copy()
-    PasteWithOffset(200, 0); PasteWithOffset(-200, 0); OverlapIntersect()
-    # edit em dash and horizontal bar
-    Select(0u2014); Copy()
-    PasteWithOffset(620, 0); PasteWithOffset(-620, 0)
-    Select(0u2010); Copy()
-    Select(0u2014); PasteInto()
+    PasteWithOffset(200, 0); PasteWithOffset(-200, 0)
     OverlapIntersect()
-    Copy(); Select(0u2015); Paste()
+    # edit em dash
+    Select(0u2014); Copy()
+    PasteWithOffset(320, 0); PasteWithOffset(-320, 0)
+    Select(0u007c); Copy(); Select(0u2014); PasteInto()
+    OverlapIntersect()
     # post-proccess
-    SelectWorthOutputting(); RoundToInt(); RemoveOverlap(); RoundToInt()
+    SelectWorthOutputting()
+    RoundToInt(); RemoveOverlap(); RoundToInt()
     # generate Ricty
     if (addfontfamily != "")
         Print("Save " + fontfamily + addfontfamily + "-" + fontstyle_list[i] + ".ttf.")
