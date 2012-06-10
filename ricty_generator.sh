@@ -411,8 +411,6 @@ copyright         = "Ricty Generator Author: Yasunori Yusa\n" \\
                   + "Licenses:\n" \\
                   + "SIL Open Font License Version 1.1 " \\
                   + "(http://scripts.sil.org/OFL)\n" \\
-                  + "M+ FONTS LICENSE " \\
-                  + "(http://mplus-fonts.sourceforge.jp/mplus-outline-fonts/#license)\n" \\
                   + "IPA Font License Agreement v1.0 " \\
                   + "(http://ipafont.ipa.go.jp/ipa_font_license_v1.html)"
 version           = "${ricty_version}"
