@@ -1,14 +1,17 @@
 # プログラミング用フォント Ricty
 
-Ricty (リクティ) は Linux 環境での研究・開発に適した
-フリーのプログラミング用 TrueType フォントです。
-C、C++、FORTRAN、Python、Perl、Ruby、AWK、シェルスクリプト、
-Makefile、LaTeX など、UNIX 系のコーディングにおける使用を想定しています。
-以下の 2 つの等幅フォントの合成とプログラミング用フォントとしての
-いくつかのチューニングを行う Ricty 生成スクリプトの配布を行なっています。
+Ricty (リクティ) は Linux 環境での研究・開発に適したフリーなプログラミング用 TrueType フォントです。
+Emacs や Vim を用いた C、C++、FORTRAN、Python、Perl、Ruby、AWK、sed、シェルスクリプト、LaTeX などのコーディングにおける使用を想定しています。
+以下の 2 つの等幅フォントの合成、および、プログラミング用フォントとしてのいくつかのチューニングを行う生成スクリプトの配布を行なっています。
 
-* [Inconsolata](http://levien.com/type/myfonts/inconsolata.html)
-* [Migu 1M](http://mix-mplus-ipa.sourceforge.jp/)
+* [Inconsolata](http://levien.com/type/myfonts/inconsolata.html): 「[Top 10 Programming Fonts](http://hivelogic.com/articles/top-10-programming-fonts/)」や「[プログラミング時に最適なフォント『Inconsolata』](http://weboo-returns.com/blog/inconsolata-as-a-programming-font/)」などで高い評価を受けているサンセリフ体等幅欧文フォント
+* [Migu 1M](http://mix-mplus-ipa.sourceforge.jp/): [M+ 1M](http://mplus-fonts.sourceforge.jp/) と [IPA ゴシック](http://ossipedia.ipa.go.jp/ipafont/)の合成フォント (旧称 M+1VM+IPAG circle/M+2VM+IPAG circle) であり、「[Windows でプログラミングに最適なフォントを探す](http://blog.blueblack.net/item_121)」などで高い評価を受けているゴシック体等幅和文フォント
+
+Inconsolata 作者の Raph Levien 氏、
+Migu 1M 作者の itouhiro 氏、
+M+ 1M 作者の coz 氏、
+IPA ゴシックのベースとされている [TB ゴシック](http://www.typebank.co.jp/fonts/gothic/tbg.html)作者の林隆男氏、
+私のイニシャルから &ldquo;Ricty&rdquo; と命名しました。
 
 # ライセンス
 
