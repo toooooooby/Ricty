@@ -4,7 +4,7 @@ set -ex   # stop on error("-e") , and debug("-x")
 #OPTIONS='-a'
 OPTIONS=$RICTY_OPTIONS
 
-MIGU1M='http://sourceforge.jp/frs/redir.php?m=iij&f=%2Fmix-mplus-ipa%2F55556%2Fmigu-1m-20120411.zip'
+MIGU1M='http://sourceforge.jp/frs/redir.php?m=iij&f=%2Fmix-mplus-ipa%2F56156%2Fmigu-1m-20120411-2.zip'
 
 DIR=$(pwd)
 DISTRO="$(lsb_release --id --short)"  # => "Ubuntu"
