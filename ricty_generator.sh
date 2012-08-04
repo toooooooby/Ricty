@@ -17,13 +17,13 @@ ricty_version="3.2.1b"
 # How to use:
 # 1. Install FontForge
 #    Debian/Ubuntu: # apt-get install fontforge
-#    Fedora:        # yum install fontforge
+#    Fedora/CentOS: # yum install fontforge
+#    OpenSUSE:      # zypper install fontforge
 #    Other Linux:   Get from http://fontforge.sourceforge.net/
 # 2. Get Inconsolata.otf
-#    Debian/Ubuntu: # apt-get install ttf-inconsolata
-#    Other Linux:   Get from http://levien.com/type/myfonts/inconsolata.html
+#    from http://levien.com/type/myfonts/inconsolata.html
 # 3. Get migu-1m-regular/bold.ttf
-#                   Get from http://mix-mplus-ipa.sourceforge.jp/
+#    from http://mix-mplus-ipa.sourceforge.jp/
 # 4. Run this script
 #    % sh ricty_generator.sh auto
 #    or
@@ -487,6 +487,9 @@ i = 0; while (i < SizeOf(fontstyle_list))
     PasteWithOffset(320, 0); PasteWithOffset(-320, 0)
     Select(0u007c); Copy(); Select(0u2014); PasteInto()
     OverlapIntersect()
+    # detach and remove .notdef
+    Select(".notdef")
+    DetachAndRemoveGlyphs()
     # post-proccess
     SelectWorthOutputting()
     RoundToInt(); RemoveOverlap(); RoundToInt()
