@@ -273,6 +273,8 @@ Ricty の派生フォントです。
 
 # 既知の問題
 
+* Gnome-terminal において、フォントに Ricty を設定できないことがあります。
+  * gconf-editor などで `~/.gconf/apps/gnome-terminal/profiles/Default/%gconf.xml` の `font` を直接編集してください。
 * Mac OS X を含む一部の環境において、生成スクリプトを実行すると
   FontForge が segmentation fault で異常終了することがあります。
   * 「[Ricty のビルド中に fontforge が segmentation fault でクラッシュする問題](http://d.hatena.ne.jp/eagletmt/20110602/1306964018)」にて
