@@ -1,14 +1,17 @@
 # プログラミング用フォント Ricty
 
-Ricty (リクティ) は Linux 環境での研究・開発に適した
-フリーのプログラミング用 TrueType フォントです。
-C、C++、FORTRAN、Python、Perl、Ruby、AWK、シェルスクリプト、
-Makefile、LaTeX など、UNIX 系のコーディングにおける使用を想定しています。
-以下の 2 つの等幅フォントの合成とプログラミング用フォントとしての
-いくつかのチューニングを行う Ricty 生成スクリプトの配布を行なっています。
+Ricty (リクティ) は Linux 環境での研究・開発に適したフリーなプログラミング用 TrueType フォントです。
+Emacs や Vim を用いた C、C++、FORTRAN、Python、Perl、Ruby、AWK、sed、シェルスクリプト、LaTeX などのコーディングにおける使用を想定しています。
+以下の 2 つの等幅フォントの合成、および、プログラミング用フォントとしてのいくつかのチューニングを行う生成スクリプトの配布を行なっています。
 
-* [Inconsolata](http://levien.com/type/myfonts/inconsolata.html)
-* [Migu 1M](http://mix-mplus-ipa.sourceforge.jp/)
+* [Inconsolata](http://levien.com/type/myfonts/inconsolata.html): 「[Top 10 Programming Fonts](http://hivelogic.com/articles/top-10-programming-fonts/)」や「[プログラミング時に最適なフォント『Inconsolata』](http://weboo-returns.com/blog/inconsolata-as-a-programming-font/)」などで高い評価を受けているサンセリフ体等幅欧文フォント
+* [Migu 1M](http://mix-mplus-ipa.sourceforge.jp/): [M+ 1M](http://mplus-fonts.sourceforge.jp/) と [IPA ゴシック](http://ossipedia.ipa.go.jp/ipafont/)の合成フォント (旧称 M+1VM+IPAG circle/M+2VM+IPAG circle) であり、「[Windows でプログラミングに最適なフォントを探す](http://blog.blueblack.net/item_121)」などで高い評価を受けているゴシック体等幅和文フォント
+
+Inconsolata 作者の Raph Levien 氏、
+Migu 1M 作者の itouhiro 氏、
+M+ 1M 作者の coz 氏、
+IPA ゴシックのベースとされている [TB ゴシック](http://www.typebank.co.jp/fonts/gothic/tbg.html)作者の林隆男氏、
+私のイニシャルから &ldquo;Ricty&rdquo; と命名しました。
 
 # ライセンス
 
@@ -21,7 +24,6 @@ Makefile、LaTeX など、UNIX 系のコーディングにおける使用を想�
   ただし、使用・複製・改変・再配布は自己責任にて行うことをお願いしています。
 * Ricty 生成スクリプトにより生成されたフォントは、
   [SIL Open Font License (OFL) Version 1.1](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=ofl)、
-  [M+ FONTS LICENSE](http://mplus-fonts.sourceforge.jp/mplus-outline-fonts/#license)、
   および、[IPA Font License Agreement v1.0](http://ipafont.ipa.go.jp/ipa_font_license_v1.html) に従うものとします。
   特に、OFL 1.1 section 5 に従い、生成されたフォントの再配布は禁止とします。
 
@@ -286,6 +288,8 @@ Ricty の派生フォントです。
 
 # 既知の問題
 
+* Gnome-terminal において、フォントに Ricty を設定できないことがあります。
+  * gconf-editor などで `~/.gconf/apps/gnome-terminal/profiles/Default/%gconf.xml` の `font` を直接編集してください。
 * Mac OS X を含む一部の環境において、生成スクリプトを実行すると
   FontForge が segmentation fault で異常終了することがあります。
   * 「[Ricty のビルド中に fontforge が segmentation fault でクラッシュする問題](http://d.hatena.ne.jp/eagletmt/20110602/1306964018)」にて
@@ -334,4 +338,4 @@ Ricty の派生フォントです。
 
 # 作者連絡先
 
-[遊佐泰紀 (Yasunori Yusa)](http://save.sys.t.u-tokyo.ac.jp/~yusa/index_ja.html)
+[遊佐泰紀 (Yasunori Yusa)](http://save.sys.t.u-tokyo.ac.jp/~yusa/index.html.ja)

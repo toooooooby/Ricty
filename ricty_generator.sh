@@ -2,7 +2,7 @@
 
 #
 # Ricty Generator
-ricty_version="3.2.0"
+ricty_version="3.2.1b"
 #
 # Author: Yasunori Yusa <lastname at save dot sys.t.u-tokyo.ac.jp>
 #
@@ -17,13 +17,13 @@ ricty_version="3.2.0"
 # How to use:
 # 1. Install FontForge
 #    Debian/Ubuntu: # apt-get install fontforge
-#    Fedora:        # yum install fontforge
+#    Fedora/CentOS: # yum install fontforge
+#    OpenSUSE:      # zypper install fontforge
 #    Other Linux:   Get from http://fontforge.sourceforge.net/
 # 2. Get Inconsolata.otf
-#    Debian/Ubuntu: # apt-get install ttf-inconsolata
-#    Other Linux:   Get from http://levien.com/type/myfonts/inconsolata.html
+#    from http://levien.com/type/myfonts/inconsolata.html
 # 3. Get migu-1m-regular/bold.ttf
-#                   Get from http://mix-mplus-ipa.sourceforge.jp/
+#    from http://mix-mplus-ipa.sourceforge.jp/
 # 4. Run this script
 #    % sh ricty_generator.sh auto
 #    or
@@ -411,8 +411,6 @@ copyright         = "Ricty Generator Author: Yasunori Yusa\n" \\
                   + "Licenses:\n" \\
                   + "SIL Open Font License Version 1.1 " \\
                   + "(http://scripts.sil.org/OFL)\n" \\
-                  + "M+ FONTS LICENSE " \\
-                  + "(http://mplus-fonts.sourceforge.jp/mplus-outline-fonts/#license)\n" \\
                   + "IPA Font License Agreement v1.0 " \\
                   + "(http://ipafont.ipa.go.jp/ipa_font_license_v1.html)"
 version           = "${ricty_version}"
@@ -466,7 +464,8 @@ i = 0; while (i < SizeOf(fontstyle_list))
     # edit zenkaku space (from ballot box and heavy greek cross)
     if ("$zenkaku_space_glyph" == "")
         Select(0u2610); Copy(); Select(0u3000); Paste()
-        Select(0u271a); Copy(); Select(0u3000); PasteInto(); OverlapIntersect()
+        Select(0u271a); Copy(); Select(0u3000); PasteInto()
+        OverlapIntersect()
     else
         Select(${zenkaku_space_glyph}); Copy(); Select(0u3000); Paste()
     endif
@@ -481,16 +480,19 @@ i = 0; while (i < SizeOf(fontstyle_list))
     CenterInWidth()
     # edit en dash
     Select(0u2013); Copy()
-    PasteWithOffset(200, 0); PasteWithOffset(-200, 0); OverlapIntersect()
-    # edit em dash and horizontal bar
-    Select(0u2014); Copy()
-    PasteWithOffset(620, 0); PasteWithOffset(-620, 0)
-    Select(0u2010); Copy()
-    Select(0u2014); PasteInto()
+    PasteWithOffset(200, 0); PasteWithOffset(-200, 0)
     OverlapIntersect()
-    Copy(); Select(0u2015); Paste()
+    # edit em dash
+    Select(0u2014); Copy()
+    PasteWithOffset(320, 0); PasteWithOffset(-320, 0)
+    Select(0u007c); Copy(); Select(0u2014); PasteInto()
+    OverlapIntersect()
+    # detach and remove .notdef
+    Select(".notdef")
+    DetachAndRemoveGlyphs()
     # post-proccess
-    SelectWorthOutputting(); RoundToInt(); RemoveOverlap(); RoundToInt()
+    SelectWorthOutputting()
+    RoundToInt(); RemoveOverlap(); RoundToInt()
     # generate Ricty
     if (addfontfamily != "")
         Print("Save " + fontfamily + addfontfamily + "-" + fontstyle_list[i] + ".ttf.")
